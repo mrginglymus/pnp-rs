@@ -442,6 +442,11 @@ mod tests {
         virtual_segments: Some(("__virtual__/foo-abcdef/2/c/foo.zip".into(), "c/foo.zip".into())),
         zip_path: "bar".into(),
     })))]
+    #[case("./.yarn/__virtual__/vitest-virtual-4db2b842d9/5/Users/user.name/AppData/Local/Yarn/Berry/cache/vitest-npm-3.2.4-7a07f931b1-10c0.zip/node_modules/vitest/", Some(VPath::Zip(ZipInfo {
+        base_path: "/".into(),
+        virtual_segments: Some((".yarn/__virtual__/vitest-virtual-4db2b842d9/5/Users/user.name/AppData/Local/Yarn/Berry/cache/vitest-npm-3.2.4-7a07f931b1-10c0.zip".into(), "Users/user.name/AppData/Local/Yarn/Berry/cache/vitest-npm-3.2.4-7a07f931b1-10c0.zip".into())),
+        zip_path: "node_modules/vitest/".into(),
+    })))]
     #[case("./a/b/c/.zip", None)]
     #[case("./a/b/c/foo.zipp", None)]
     #[case("./a/b/c/foo.zip/bar/baz/qux.zip", Some(VPath::Zip(ZipInfo {
